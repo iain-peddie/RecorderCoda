@@ -50,7 +50,7 @@ namespace Recorder
         /// <param name="key">The key.</param>
         public void DeleteByKey(string key)
         {
-            throw new NotImplementedException();
+            recordingsCollection.Remove(key);
         }
 
         public void Clear()

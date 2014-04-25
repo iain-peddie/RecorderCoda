@@ -30,6 +30,30 @@ namespace RecorderTests
             
         }
 
+        [Test]
+        public void Drop_non_existant_key_for_dictionary_results_does_not_throw()
+        {
+            Recorder.Recorder recorder = createStubRecorder();
+
+            recorder.Add("test", 1);
+            recorder.DeleteByKey("Bob");
+
+            // correct behaviour is no exception thrown
+        }
+
+        [Test]
+        public void Drop_existant_key_for_dictionary_results_in_removal_from_dictionary()
+        {
+            Recorder.Recorder recorder = createStubRecorder();
+
+            recorder.Add("test", 1);
+
+            Assert.AreEqual(1, recorder.GetValueByKey("test"));
+
+            recorder.DeleteByKey("test");
+
+            Assert.Throws(typeof(KeyNotFoundException), delegate() { recorder.GetValueByKey("test"); });
+        }
 
         private Recorder.Recorder createStubRecorder()
         {
