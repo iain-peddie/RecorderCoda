@@ -21,12 +21,12 @@ namespace Recorder
 
         public event EventHandler RecorderEvents;
 
-        private void SendNotifications()
+        private void SendNotifications(string message)
         {
             EventHandler handler = RecorderEvents;
             if (handler != null)
             {
-                handler(this, EventArgs.Empty);
+                handler(this, new RecorderEventArgs(message));
             }
         }
 
