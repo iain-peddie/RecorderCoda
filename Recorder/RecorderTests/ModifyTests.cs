@@ -76,6 +76,20 @@ namespace RecorderTests
             Assert.Throws(typeof(KeyNotFoundException), delegate() { recorder.GetValueByKey("test"); });
         }
 
+        [Test]
+        public void Clear_removes_all_values()
+        {
+            Recorder.Recorder recorder = createStubRecorder();
+
+            recorder.Add("test", 1);
+            recorder.Add("test2", 2);
+
+            recorder.Clear();
+
+            Assert.Throws(typeof(KeyNotFoundException), delegate() { recorder.GetValueByKey("test"); });
+            Assert.Throws(typeof(KeyNotFoundException), delegate() { recorder.GetValueByKey("test2"); });
+        }
+
         private Recorder.Recorder createStubRecorder()
         {
             return new Recorder.Recorder();

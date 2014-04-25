@@ -64,7 +64,7 @@ namespace Recorder
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            recordingsCollection.Clear();
         }
     }
 }
