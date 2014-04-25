@@ -9,6 +9,7 @@ namespace Recorder
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Runtime.Remoting.Messaging;
     using System.Text;
 
     /// <summary>
@@ -18,8 +19,19 @@ namespace Recorder
     {
 
         private Dictionary<string, int> recordingsCollection = new Dictionary<string, int>();
+        private Dictionary<string, int> changesCollection = new Dictionary<string, int>();
 
         public event EventHandler RecorderEvents;
+
+        private int commandCounter;
+
+        private readonly int n;
+
+        public Recorder(int n)
+        {
+            this.n = n;
+            this.commandCounter = 0;
+        }
 
         private void SendNotifications(string message)
         {
@@ -30,6 +42,25 @@ namespace Recorder
             }
         }
 
+
+        private void IncrementCounterAndFireNotifications()
+        {
+            this.commandCounter++;
+            if (this.commandCounter == n)
+            {
+                string changes = this.BuildChangeReport();
+                this.SendNotifications(changes);
+
+                //Reset for next cycle
+                commandCounter = 0;
+                changesCollection.Clear();
+                foreach (KeyValuePair<string, int> keyValuePair in recordingsCollection)
+                {
+                    changesCollection.Add(keyValuePair.Key,keyValuePair.Value);
+                }
+            }
+        }
+
         /// <summary>
         /// Implemented method from IQueryable to get value by key
         /// </summary>
@@ -37,7 +68,6 @@ namespace Recorder
         /// <returns>String value or KeyNotFoundException</returns>
         public int GetValueByKey(string key)
         {
-
             int value = recordingsCollection[key];
 
             return value;
@@ -54,12 +84,19 @@ namespace Recorder
 
             if (recordingsCollection.ContainsKey(key))
             {
+                if (!changesCollection.ContainsKey(key))
+                {
+                    changesCollection.Add(key,recordingsCollection[key]);
+                }
                 recordingsCollection[key] = value;
             }
             else
             {
                 recordingsCollection.Add(key, value);
+                changesCollection.Add(key,value);
             }
+
+            this.IncrementCounterAndFireNotifications();
         }
 
         /// <summary>
@@ -69,11 +106,22 @@ namespace Recorder
         public void DeleteByKey(string key)
         {
             recordingsCollection.Remove(key);
+
+
+            this.IncrementCounterAndFireNotifications();
         }
 
+        /// <summary>
+        /// Clears this instance.
+        /// </summary>
         public void Clear()
         {
             recordingsCollection.Clear();
+        }
+
+        public string BuildChangeReport()
+        {
+            return string.Empty;
         }
     }
 }

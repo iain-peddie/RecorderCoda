@@ -51,7 +51,7 @@ namespace RecorderTests
 
         private Recorder.Recorder createStubRecorder()
         {
-            return new Recorder.Recorder();
+            return new Recorder.Recorder(0);
         }
     }
 }

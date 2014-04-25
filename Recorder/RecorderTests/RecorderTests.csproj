@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CommandTests.cs" />
     <Compile Include="ModifyTests.cs" />
+    <Compile Include="NotificationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryTests.cs" />
   </ItemGroup>

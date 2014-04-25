@@ -18,7 +18,7 @@ namespace RecorderTests
         [SetUp]
         public void SetUp()
         {
-            TestRecorder = new Recorder();
+            TestRecorder = new Recorder(0);
             TestCommand = new Command(TestRecorder);
         }
 
