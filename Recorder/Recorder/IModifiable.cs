@@ -18,5 +18,7 @@ namespace Recorder
     {
         void Add(string key, string value);
         void DeleteByKey(string key);
+
+        void Clear();
     }
 }
