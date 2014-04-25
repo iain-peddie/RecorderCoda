@@ -33,6 +33,11 @@ namespace Recorder
             this.commandCounter = 0;
         }
 
+        public void RegisterInvalidCommand(string commandString)
+        {
+            SendNotifications("Invalid command entered: " + commandString);
+        }
+
         private void SendNotifications(string message)
         {
             EventHandler handler = RecorderEvents;

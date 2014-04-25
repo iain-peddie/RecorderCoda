@@ -20,5 +20,7 @@ namespace Recorder
         void DeleteByKey(string key);
 
         void Clear();
+
+        void RegisterInvalidCommand(string commandString);
     }
 }

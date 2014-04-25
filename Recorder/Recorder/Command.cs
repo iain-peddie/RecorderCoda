@@ -43,6 +43,7 @@ namespace Recorder
                         break;
 
                     default:
+                        recorder.RegisterInvalidCommand(commandString);
                         break;
                 }
 
