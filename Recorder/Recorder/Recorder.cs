@@ -16,14 +16,22 @@ namespace Recorder
     /// </summary>
     public class Recorder : IQueryable, IModifiable
     {
+
+        private Dictionary<string, int> recordingsCollection = new Dictionary<string, int>();
+
+
+
         /// <summary>
         /// Implemented method from IQueryable to get value by key
         /// </summary>
         /// <param name="key">Key to search for</param>
         /// <returns>String value or KeyNotFoundException</returns>
-        public string GetKeyByValue(string key)
+        public int GetKeyByValue(string key)
         {
-            throw new KeyNotFoundException();
+
+            int value = recordingsCollection[key];
+
+            return value;
         }
 
         /// <summary>
@@ -31,9 +39,9 @@ namespace Recorder
         /// </summary>
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
-        public void Add(string key, string value)
+        public void Add(string key, int value)
         {
-            throw new NotImplementedException();
+            recordingsCollection.Add(key, value);
         }
 
         /// <summary>

@@ -16,7 +16,7 @@ namespace Recorder
     /// </summary>
     public interface IModifiable
     {
-        void Add(string key, string value);
+        void Add(string key, int value);
         void DeleteByKey(string key);
 
         void Clear();

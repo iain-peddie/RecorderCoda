@@ -20,8 +20,20 @@ namespace RecorderTests
     public class ModifyTests
     {
         [Test]
-        public void Test()
+        public void Add_unique_key_value_adds_to_dictionary()
         {
+            Recorder.Recorder recorder = createStubRecorder();
+
+            recorder.Add("test",1);
+
+            Assert.AreEqual(1,recorder.GetKeyByValue("test"));
+            
+        }
+
+
+        private Recorder.Recorder createStubRecorder()
+        {
+            return new Recorder.Recorder();
         }
     }
 }

@@ -1,17 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\rosc\RecorderCoda\Recorder\RecorderTests\RecorderTests.csproj" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-04-25" time="13:48:00">
+<test-results name="C:\Users\rosc\RecorderCoda\Recorder\RecorderTests\RecorderTests.csproj" total="2" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-04-25" time="14:55:34">
   <environment nunit-version="2.5.10.11092" clr-version="2.0.50727.5472" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\rosc\RecorderCoda\NUnit\net-2.0" machine-name="PAM" user="rosc" user-domain="VINEYARD" />
   <culture-info current-culture="en-GB" current-uiculture="en-US" />
-  <test-suite type="Test Project" name="C:\Users\rosc\RecorderCoda\Recorder\RecorderTests\RecorderTests.csproj" executed="True" result="Success" success="True" time="0.270" asserts="0">
+  <test-suite type="Test Project" name="C:\Users\rosc\RecorderCoda\Recorder\RecorderTests\RecorderTests.csproj" executed="True" result="Success" success="True" time="0.244" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\Users\rosc\RecorderCoda\Recorder\RecorderTests\bin\Debug\RecorderTests.dll" executed="True" result="Success" success="True" time="0.074" asserts="0">
+      <test-suite type="Assembly" name="C:\Users\rosc\RecorderCoda\Recorder\RecorderTests\bin\Debug\RecorderTests.dll" executed="True" result="Success" success="True" time="0.081" asserts="0">
         <results>
-          <test-suite type="Namespace" name="RecorderTests" executed="True" result="Success" success="True" time="0.071" asserts="0">
+          <test-suite type="Namespace" name="RecorderTests" executed="True" result="Success" success="True" time="0.077" asserts="0">
             <results>
-              <test-suite type="TestFixture" name="QueryTests" executed="True" result="Success" success="True" time="0.069" asserts="0">
+              <test-suite type="TestFixture" name="ModifyTests" executed="True" result="Success" success="True" time="0.071" asserts="0">
                 <results>
-                  <test-case name="RecorderTests.QueryTests.Getting_key_from_empty_recorder_throws_exception" executed="True" result="Success" success="True" time="0.063" asserts="1" />
+                  <test-case name="RecorderTests.ModifyTests.Add_unique_key_value_adds_to_dictionary" executed="True" result="Success" success="True" time="0.066" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="QueryTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                <results>
+                  <test-case name="RecorderTests.QueryTests.Getting_key_from_empty_recorder_throws_exception" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                 </results>
               </test-suite>
             </results>
