@@ -1,0 +1,55 @@
+<<<<<<< Updated upstream
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recorder", "Recorder\Recorder.csproj", "{B020D717-132E-453C-B7C0-10696DC9A67C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecorderTests", "RecorderTests\RecorderTests.csproj", "{0F9E3C62-C3AD-4B29-BFB6-C7A3012E9B47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B020D717-132E-453C-B7C0-10696DC9A67C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B020D717-132E-453C-B7C0-10696DC9A67C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B020D717-132E-453C-B7C0-10696DC9A67C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B020D717-132E-453C-B7C0-10696DC9A67C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F9E3C62-C3AD-4B29-BFB6-C7A3012E9B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F9E3C62-C3AD-4B29-BFB6-C7A3012E9B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F9E3C62-C3AD-4B29-BFB6-C7A3012E9B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F9E3C62-C3AD-4B29-BFB6-C7A3012E9B47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recorder", "Recorder\Recorder.csproj", "{B020D717-132E-453C-B7C0-10696DC9A67C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecorderTests", "RecorderTests\RecorderTests.csproj", "{EB745C22-670C-4294-9A83-016222252218}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B020D717-132E-453C-B7C0-10696DC9A67C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B020D717-132E-453C-B7C0-10696DC9A67C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B020D717-132E-453C-B7C0-10696DC9A67C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B020D717-132E-453C-B7C0-10696DC9A67C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB745C22-670C-4294-9A83-016222252218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB745C22-670C-4294-9A83-016222252218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB745C22-670C-4294-9A83-016222252218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB745C22-670C-4294-9A83-016222252218}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+>>>>>>> Stashed changes

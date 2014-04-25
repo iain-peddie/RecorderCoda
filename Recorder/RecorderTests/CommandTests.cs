@@ -15,13 +15,13 @@ namespace RecorderTests
         [Test]
         public void New_value_is_added_to_empty_repository()
         {
-            IModifiable modifiable=null;
-            IQueryable queryable=null;
-            ICommand command = new Command(modifiable);
+            Recorder recorder = new Recorder();
 
-            command.Execute("value key myValue");
+            ICommand command = new Command(recorder);
 
-            Assert.That(queryable.GetValueByKey("key"),Is.EqualTo("myValue"));
+            command.Execute("value key 1");
+
+            Assert.That(recorder.GetValueByKey("key"),Is.EqualTo(1));
         }
 
 
