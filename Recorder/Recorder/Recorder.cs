@@ -19,7 +19,7 @@ namespace Recorder
     {
 
         private Dictionary<string, int> recordingsCollection = new Dictionary<string, int>();
-        private Dictionary<string, int> changesCollection = new Dictionary<string, int>();
+        private Dictionary<string, int> checkpointCollection = new Dictionary<string, int>();
 
         public event EventHandler RecorderEvents;
 
@@ -53,10 +53,10 @@ namespace Recorder
 
                 //Reset for next cycle
                 commandCounter = 0;
-                changesCollection.Clear();
+                this.checkpointCollection.Clear();
                 foreach (KeyValuePair<string, int> keyValuePair in recordingsCollection)
                 {
-                    changesCollection.Add(keyValuePair.Key,keyValuePair.Value);
+                    this.checkpointCollection.Add(keyValuePair.Key,keyValuePair.Value);
                 }
             }
         }
@@ -84,16 +84,11 @@ namespace Recorder
 
             if (recordingsCollection.ContainsKey(key))
             {
-                if (!changesCollection.ContainsKey(key))
-                {
-                    changesCollection.Add(key,recordingsCollection[key]);
-                }
                 recordingsCollection[key] = value;
             }
             else
             {
                 recordingsCollection.Add(key, value);
-                changesCollection.Add(key,value);
             }
 
             this.IncrementCounterAndFireNotifications();
@@ -121,7 +116,37 @@ namespace Recorder
 
         public string BuildChangeReport()
         {
-            return string.Empty;
+            StringBuilder builder = new StringBuilder();
+
+            foreach (KeyValuePair<string, int> keyValuePair in recordingsCollection)
+            {
+                if(this.checkpointCollection.ContainsKey(keyValuePair.Key) && this.checkpointCollection[keyValuePair.Key]!=keyValuePair.Value)
+                {
+                   // We have found a modification
+                    builder.AppendFormat(
+                        "Key: {0} Modified by {1}\n",
+                        keyValuePair.Key,
+                        checkpointCollection[keyValuePair.Key] - keyValuePair.Value);
+                }
+
+                if (!this.checkpointCollection.ContainsKey(keyValuePair.Key))
+                {
+                    //Add 
+                    builder.AppendFormat("Key: {0} Added", keyValuePair.Key);
+                }
+                
+            }
+
+            foreach (KeyValuePair<string, int> keyValuePair in this.checkpointCollection)
+            {
+                if (!recordingsCollection.ContainsKey(keyValuePair.Key))
+                {
+                    // Deleted
+                    builder.AppendFormat("Key: {0} Deleted", keyValuePair.Key);
+                }
+            }
+
+            return builder.ToString();
         }
     }
 }

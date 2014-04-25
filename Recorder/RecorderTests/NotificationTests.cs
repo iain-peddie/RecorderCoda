@@ -35,7 +35,7 @@ namespace RecorderTests
             string report = recorder.BuildChangeReport();
 
             // Then
-            Assert.That(report, Is.EqualTo("{key: 1}"));
+            Assert.That(report, Is.EqualTo("Key: key Added"));
             
         }
 
