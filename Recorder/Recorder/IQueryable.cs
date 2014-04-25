@@ -16,6 +16,6 @@ namespace Recorder
     /// </summary>
     public interface IQueryable
     {
-        string GetByKey(string key);      
+        string GetKeyByValue(string key);      
     }
 }

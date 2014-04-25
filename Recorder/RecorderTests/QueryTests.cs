@@ -22,13 +22,18 @@ namespace RecorderTests
         [Test]
         public void Getting_key_from_empty_recorder_throws_exception()
         {
-            // // Where
-            //var recorder = createStubRecorder();
+            // Where
+            Recorder.Recorder recorder = createStubRecorder();
 
-            //// When
-            //// Then
+            // When
+            // Then
 
-            //Assert.Throws(typeof(KeyNotFoundException), delegate() { recorder.GetKeyByValue("asdf"); });
+            Assert.Throws(typeof(KeyNotFoundException), delegate() { recorder.GetKeyByValue("asdf"); });
+        }
+
+        private Recorder.Recorder createStubRecorder()
+        {
+            return new Recorder.Recorder();
         }
     }
 }

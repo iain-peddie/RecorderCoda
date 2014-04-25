@@ -21,7 +21,7 @@ namespace Recorder
         /// </summary>
         /// <param name="key">Key to search for</param>
         /// <returns>String value or KeyNotFoundException</returns>
-        public string GetByKey(string key)
+        public string GetKeyByValue(string key)
         {
             throw new KeyNotFoundException();
         }
