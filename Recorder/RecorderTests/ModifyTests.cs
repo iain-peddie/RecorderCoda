@@ -31,6 +31,27 @@ namespace RecorderTests
         }
 
         [Test]
+        public void Add_existing_key_modifies_value_in_dictionary()
+        {
+            Recorder.Recorder recorder = createStubRecorder();
+
+            recorder.Add("test", 1);
+            recorder.Add("test", 2);
+
+            Assert.AreEqual(2, recorder.GetValueByKey("test"));
+
+        }
+
+        [Test]
+        public void Add_null_key_throws()
+        {
+            Recorder.Recorder recorder = createStubRecorder();
+
+            Assert.Throws(typeof(ArgumentNullException), delegate() { recorder.Add(null, 1); });
+
+        }
+
+        [Test]
         public void Drop_non_existant_key_for_dictionary_results_does_not_throw()
         {
             Recorder.Recorder recorder = createStubRecorder();

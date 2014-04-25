@@ -41,7 +41,16 @@ namespace Recorder
         /// <param name="value">The value.</param>
         public void Add(string key, int value)
         {
-            recordingsCollection.Add(key, value);
+            if (string.IsNullOrEmpty(key)) throw new ArgumentNullException();
+
+            if (recordingsCollection.ContainsKey(key))
+            {
+                recordingsCollection[key] = value;
+            }
+            else
+            {
+                recordingsCollection.Add(key, value);
+            }
         }
 
         /// <summary>
