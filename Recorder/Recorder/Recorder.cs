@@ -19,7 +19,16 @@ namespace Recorder
 
         private Dictionary<string, int> recordingsCollection = new Dictionary<string, int>();
 
+        public event EventHandler RecorderEvents;
 
+        private void SendNotifications()
+        {
+            EventHandler handler = RecorderEvents;
+            if (handler != null)
+            {
+                handler(this, EventArgs.Empty);
+            }
+        }
 
         /// <summary>
         /// Implemented method from IQueryable to get value by key
