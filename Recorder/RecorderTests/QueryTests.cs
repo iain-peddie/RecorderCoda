@@ -28,7 +28,7 @@ namespace RecorderTests
             // When
             // Then
 
-            Assert.Throws(typeof(KeyNotFoundException), delegate() { recorder.GetKeyByValue("asdf"); });
+            Assert.Throws(typeof(KeyNotFoundException), delegate() { recorder.GetValueByKey("asdf"); });
         }
 
         private Recorder.Recorder createStubRecorder()

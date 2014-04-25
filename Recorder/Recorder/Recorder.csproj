@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="ICommand.cs" />
     <Compile Include="IModifiable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IQueryable.cs" />

@@ -26,7 +26,7 @@ namespace RecorderTests
 
             recorder.Add("test",1);
 
-            Assert.AreEqual(1,recorder.GetKeyByValue("test"));
+            Assert.AreEqual(1,recorder.GetValueByKey("test"));
             
         }
 

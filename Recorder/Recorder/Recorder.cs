@@ -26,7 +26,7 @@ namespace Recorder
         /// </summary>
         /// <param name="key">Key to search for</param>
         /// <returns>String value or KeyNotFoundException</returns>
-        public int GetKeyByValue(string key)
+        public int GetValueByKey(string key)
         {
 
             int value = recordingsCollection[key];
