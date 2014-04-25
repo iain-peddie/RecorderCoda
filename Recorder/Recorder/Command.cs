@@ -18,14 +18,21 @@ namespace Recorder
         {
             bool isValid = false;
             string[] commandBits = commandString.Split(' ');
-            if (commandBits.Count() > 1)
+            if (commandBits.Any())
             {
                 string commandType = commandBits[0].ToLower();
                 switch (commandType)
                 {
-                    case DeleteCommand:
-                        recorder.DeleteByKey(commandBits[1]);
+                    case ClearCommand:
+                        recorder.Clear();
                         isValid = true;
+                        break;
+                    case DeleteCommand:
+                        if (commandBits.Count() > 1)
+                        {
+                            recorder.DeleteByKey(commandBits[1]);
+                            isValid = true;
+                        }
                         break;
                     case AddCommand:
                         if (commandBits.Count() > 2)
@@ -46,5 +53,6 @@ namespace Recorder
 
         private const string DeleteCommand = "drop";
         private const string AddCommand = "value";
+        private const string ClearCommand = "clear";
     }
 }
